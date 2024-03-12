@@ -4,21 +4,19 @@ namespace Elloringene\Slugify;
 class Slugify {
     protected $model, $title;
 
-    public function __construct($model, $title)
+    public function __construct()
     {
-        $this->model = $model;
-        $this->title = $title;
     }
 
-    public function make(){
-        $slug = $this->slugify($this->title,'-');
+    public function make($model, $title){
+        $slug = $this->slugify($title,'-');
         $existFlag = true;
         $index = 1;
         $temp_slug = $slug;
 
         while($existFlag==true){
             $existFlag=false;
-            $check = $this->model->where('slug' , $temp_slug)->count();
+            $check = $model->where('slug' , $temp_slug)->count();
 
             if($check) {
                 $existFlag = true;
