@@ -2,7 +2,6 @@
     "name": "elloringene/slugify",
     "description": "Library for creating slugs for models as unique identifiers.",
     "type": "library",
-    "license": "Free",
     "autoload": {
         "psr-4": {
             "Elloringene\\Slugify\\": "src/"
